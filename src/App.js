@@ -1,14 +1,20 @@
-import React from "react";
-import ProductList from "./productsList";
-import Product from "../src/Components/Product";
+import React, { Component } from "react";
 
-function App() {
-   const productComponent = ProductList.map(item => <Product key={item.id} product={item}/>)
+class App extends Component {
+    constructor(){
+        super()
+        this.state = {
+            isLoggedIn : true,
+        }
+    }
+    render(){
+        
     return (
-      <div>
-          {productComponent}
-      </div>
+        <div>
+           <h1>You are curently {this.state.isLoggedIn ? 'In' : 'Out'}</h1>
+        </div>
     )
+    }
 }
 
 export default App;

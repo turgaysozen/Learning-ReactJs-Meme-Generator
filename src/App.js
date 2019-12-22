@@ -1,20 +1,37 @@
 import React, { Component } from "react";
+import Todo from "../src/Components/Todo"
+import TodoList from "./productsList";
+
+// class App extends Component {
+
+// }
 
 class App extends Component {
-    constructor(){
+    constructor() {
         super()
         this.state = {
-            isLoggedIn : true,
+            todo: TodoList,
         }
+        this.Click = this.Click.bind(this);
     }
-    render(){
-        
-    return (
-        <div>
-           <h1>You are curently {this.state.isLoggedIn ? 'In' : 'Out'}</h1>
-        </div>
-    )
+    Click(id) {
+        this.setState(prevState => {
+            const Updatetodo = prevState.todo.map(todo => {
+                if (todo.id === id) {
+                    todo.checked = !todo.checked;
+                }
+                return todo;
+            })
+            return prevState.todo = Updatetodo;
+        });
+    }
+    render() {
+        const todoItems = this.state.todo.map(item => <Todo key={item.id} item={item} Click={this.Click} />);
+        return (
+            <div>
+                {todoItems}
+            </div >
+        )
     }
 }
-
 export default App;

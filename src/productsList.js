@@ -1,16 +1,29 @@
-const products = [
-  {
-    id : 1,
-    title: 'This is product 1',
-    price: 10,
-    quantity: 10,
-  },
-  {
-    id : 2,
-    title: 'This is product 2',
-    price: 20,
-    quantity: 20,
-  }
+const todoList = [
+    {
+        id: 1,
+        title: 'To Do 1',
+        checked: true,
+    },
+    {
+        id: 2,
+        title: 'To Do 2',
+        checked: true,
+    },
+    {
+        id: 3,
+        title: 'To Do 3',
+        checked: false,
+    },
+    {
+        id: 4,
+        title: 'To Do 4',
+        checked: false
+    },
+    {
+        id: 5,
+        title: 'To Do 5',
+        checked: false
+    }
 ]
 
-export default products;
+export default todoList;
